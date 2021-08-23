@@ -4,22 +4,31 @@ import './App.css';
 // import ListMoviePage from './containers/HomeTemplate/ListMoviePage';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import PageNotFound from "./containers/PageNotFound";
-import Navbar from './containers/HomeTemplate/_components/Navbar/Navbar';
-import {routesHome} from "./routes";
+import {routesHome, routesAdmin} from "./routes";
+import HomeTemplate from './containers/HomeTemplate';
+import AdminTemplate from './containers/AdminTemplate';
+
 
 function App() {
 
   const renderLayoutHome = (routes) => {
     return routes?.map((item, index) => {
       return (
-        <Route key={index} exact={item.exact} path={item.path} component={item.component}/>
+        <HomeTemplate key={index} exact={item.exact} path={item.path} Component={item.component}/>
+      )
+    })
+  }
+
+  const renderLayoutAdmin = (routes) => {
+    return routes?.map((item, index) => {
+      return (
+        <AdminTemplate key={index} exact={item.exact} path={item.path} Component={item.component}/>
       )
     })
   }
 
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         {/* Trang chủ - localhost:3000 */}
         {/* <Route exact path="/" component={HomePage}/> */}
@@ -31,6 +40,7 @@ function App() {
         {/* <Route path="/list-movie" component={ListMoviePage}/> */}
 
         {renderLayoutHome(routesHome)}
+        {renderLayoutAdmin(routesAdmin)}
 
         {/* Trang không tồn tại - phải để cuối cùng */}
         <Route path="" component={PageNotFound} />

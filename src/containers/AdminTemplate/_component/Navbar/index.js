@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink} from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 export default class Navbar extends Component {
     render() {
@@ -19,45 +19,18 @@ export default class Navbar extends Component {
                                 exact
                                 activeClassName="active"
                                 className="nav-link" 
-                                to="/"
+                                to="/dashboard"
                             >
-                                Home
+                                Dashboard
                             </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink 
                                 activeClassName="active"
                                 className="nav-link" 
-                                to="/about"
+                                to="/add-user"
                             >
-                                About
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink 
-                                activeClassName="active"
-                                className="nav-link" 
-                                to="/list-movie"
-                            >
-                                List Movie
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink 
-                                activeClassName="active"
-                                className="nav-link" 
-                                to="/hoc"
-                            >
-                                HOC
-                            </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink 
-                                activeClassName="active"
-                                className="nav-link" 
-                                to="/render-props"
-                            >
-                                RenderProps
+                                Add User
                             </NavLink>
                         </li>
                     </ul>
