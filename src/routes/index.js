@@ -6,6 +6,7 @@ import Dashboard from "../containers/AdminTemplate/Dashboard";
 import AddUser from "../containers/AdminTemplate/AddUser";
 import HocPage from "../containers/HomeTemplate/HOCPage";
 import RenderProps from "../containers/HomeTemplate/RenerProps";
+import HooksPage from "../containers/HomeTemplate/HooksPage";
 
 
 const routesHome = [
@@ -39,7 +40,11 @@ const routesHome = [
         path: "/render-props",
         component: RenderProps,
     },
-
+    {
+        exact: false,
+        path: "/hook",
+        component: HooksPage,
+    }
 ];
 const routesAdmin = [
     {
