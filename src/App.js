@@ -7,6 +7,7 @@ import PageNotFound from "./containers/PageNotFound";
 import {routesHome, routesAdmin} from "./routes";
 import HomeTemplate from './containers/HomeTemplate';
 import AdminTemplate from './containers/AdminTemplate';
+import AuthPage from "./containers/AdminTemplate/Auth";
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
 
         {renderLayoutHome(routesHome)}
         {renderLayoutAdmin(routesAdmin)}
+
+        {/* Auth */}
+        <Route path="/auth" component={AuthPage} />
 
         {/* Trang không tồn tại - phải để cuối cùng */}
         <Route path="" component={PageNotFound} />

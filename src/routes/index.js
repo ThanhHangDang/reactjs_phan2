@@ -8,7 +8,6 @@ import HocPage from "../containers/HomeTemplate/HOCPage";
 import RenderProps from "../containers/HomeTemplate/RenerProps";
 import HooksPage from "../containers/HomeTemplate/HooksPage";
 
-
 const routesHome = [
     {
         exact: true,
