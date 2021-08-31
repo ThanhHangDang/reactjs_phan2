@@ -7,6 +7,8 @@ import AddUser from "../containers/AdminTemplate/AddUser";
 import HocPage from "../containers/HomeTemplate/HOCPage";
 import RenderProps from "../containers/HomeTemplate/RenerProps";
 import HooksPage from "../containers/HomeTemplate/HooksPage";
+import MaterialPage from "../containers/HomeTemplate/MaterialPage";
+import StyleComponentPage from "../containers/HomeTemplate/StyledComponentPage";
 
 const routesHome = [
     {
@@ -43,7 +45,18 @@ const routesHome = [
         exact: false,
         path: "/hook",
         component: HooksPage,
+    },
+    {
+        exact: false,
+        path: "/material",
+        component: MaterialPage
+    },
+    {
+        exact: false,
+        path: "/style",
+        component: StyleComponentPage
     }
+
 ];
 const routesAdmin = [
     {

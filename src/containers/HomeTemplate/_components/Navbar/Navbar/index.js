@@ -69,6 +69,24 @@ export default class Navbar extends Component {
                                 ReactHooks
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink 
+                                activeClassName="active"
+                                className="nav-link" 
+                                to="/material"
+                            >
+                                Material Page
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink 
+                                activeClassName="active"
+                                className="nav-link" 
+                                to="/style"
+                            >
+                                Styled Component
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>
