@@ -1,24 +1,27 @@
-import axios from "axios";
+// import axios from "axios";
 import * as ActionType from "./contants";
+import api from "./../../../../utils/apiUtils";
 
 export const actAddUser = (user) => {
 
-    let accessToken = "";
-    if(localStorage.getItem("UserAdmin")){
-        accessToken = JSON.parse(localStorage.getItem("UserAdmin")).accessToken;
-    }
+    // let accessToken = "";
+    // if(localStorage.getItem("UserAdmin")){
+    //     accessToken = JSON.parse(localStorage.getItem("UserAdmin")).accessToken;
+    // }
 
     return async (dispatch) => {
         try {
             dispatch(actAddUserRequest());
-            const result = await axios({
-                url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
-                method: "POST",
-                data: user,
-                headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                }
-            })
+            // const result = await axios({
+            //     url: "https://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/ThemNguoiDung",
+            //     method: "POST",
+            //     data: user,
+            //     headers: {
+            //         Authorization: `Bearer ${accessToken}`,
+            //     }
+            // })
+
+            const result = await api.post("QuanLyNguoiDung/ThemNguoiDung", user);
 
             if(result.statusText === "OK"){
                 dispatch(actAddUserSuccess(result.data))

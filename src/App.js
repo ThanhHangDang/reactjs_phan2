@@ -2,16 +2,22 @@ import './App.css';
 // import HomePage from "./containers/HomeTemplate/HomePage";
 // import AboutPage from "./containers/HomeTemplate/AboutPage";
 // import ListMoviePage from './containers/HomeTemplate/ListMoviePage';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {Switch, Route, withRouter} from "react-router-dom";
 import PageNotFound from "./containers/PageNotFound";
 import {routesHome, routesAdmin} from "./routes";
 import HomeTemplate from './containers/HomeTemplate';
 import AdminTemplate from './containers/AdminTemplate';
 import AuthPage from "./containers/AdminTemplate/Auth";
+import {actTryLogin} from "./containers/AdminTemplate/Auth/modules/action";
+import {useDispatch} from "react-redux";
+import {useEffect} from "react";
 
-
-function App() {
-
+function App(props) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(actTryLogin(props.history));
+  }, [])
+ 
   const renderLayoutHome = (routes) => {
     return routes?.map((item, index) => {
       return (
@@ -29,7 +35,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+   
       <Switch>
         {/* Trang chủ - localhost:3000 */}
         {/* <Route exact path="/" component={HomePage}/> */}
@@ -49,8 +55,8 @@ function App() {
         {/* Trang không tồn tại - phải để cuối cùng */}
         <Route path="" component={PageNotFound} />
       </Switch>
-    </BrowserRouter>
+    
   );
 }
 
-export default App;
+export default withRouter(App);
